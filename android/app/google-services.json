@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "344603180015",
+    "project_id": "allah-bohat-bada-hai",
+    "storage_bucket": "allah-bohat-bada-hai.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:344603180015:android:99b12c664b260a6bc7941a",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "344603180015-kfb96aklq48k0hgl5e920lbln4ms60v2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_W2XAVtTv7OQXYboVmygKHIicX_GmNnQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "344603180015-kfb96aklq48k0hgl5e920lbln4ms60v2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "344603180015-qotrvk51l48paun1on3q9i393v4nhaq9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flutterApplication2"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
