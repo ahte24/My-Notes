@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_2/constante/routes.dart';
 import '../utilities/show_error_dialog.dart';
 
-
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
 
@@ -54,7 +53,8 @@ class _LoginViewState extends State<LoginView> {
                 final email = _email.text;
                 final password = _password.text;
                 try {
-                  await FirebaseAuth.instance.signInWithEmailAndPassword(
+                  await FirebaseAuth.instance
+                  .signInWithEmailAndPassword(
                     email: email,
                     password: password,
                   );
@@ -102,4 +102,3 @@ class _LoginViewState extends State<LoginView> {
     );
   }
 }
-
