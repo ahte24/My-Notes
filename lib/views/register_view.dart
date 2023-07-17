@@ -5,7 +5,7 @@ import 'package:flutter_application_2/services/auth/auth_service.dart';
 import 'package:flutter_application_2/utilities/show_error_dialog.dart';
 
 class Registerview extends StatefulWidget {
-  const Registerview({super.key});
+  const Registerview({Key? key}) : super(key: key);
 
   @override
   State<Registerview> createState() => _RegisterviewState();
@@ -52,40 +52,41 @@ class _RegisterviewState extends State<Registerview> {
             autocorrect: false,
           ),
           TextButton(
-              onPressed: () async {
-                final email = _email.text;
-                final password = _password.text;
-                try {
-                  AuthService.firebase().createUser(
-                    email: email,
-                    password: password,
-                  );
-                  AuthService.firebase().sendEmailVerification();
-                  // ignore: use_build_context_synchronously
-                  Navigator.of(context).pushNamed(verifyEmailRoute);
-                } on WeakPasswordAuthException {
-                  await showErrorDialog(
-                    context,
-                    'Weak Password. Try a strong one',
-                  );
-                } on EmailAlreadyInUseAuthException {
-                  await showErrorDialog(
-                    context,
-                    'Email already in use. Try login',
-                  );
-                } on InvalidEmailAuthException {
-                  await showErrorDialog(
-                    context,
-                    'Invalid email. Please check the email and try again',
-                  );
-                } on GenericAuthException {
-                  await showErrorDialog(
-                    context,
-                    'Failed to register',
-                  );
-                }
-              },
-              child: const Text('Register')),
+            onPressed: () async {
+              final email = _email.text;
+              final password = _password.text;
+              try {
+                await AuthService.firebase()
+                    .createUser(email: email, password: password);
+
+                AuthService.firebase().sendEmailVerification();
+                // ignore: use_build_context_synchronously
+                Navigator.of(context).pushNamed(verifyEmailRoute);
+              } on WeakPasswordAuthException {
+                await showErrorDialog(
+                  context,
+                  'Weak Password. Try a strong one',
+                );
+              } on EmailAlreadyInUseAuthException {
+                await showErrorDialog(
+                  context,
+                  'Email already in use. Try login',
+                );
+              } on InvalidEmailAuthException {
+                await showErrorDialog(
+                  context,
+                  'Invalid email. Please check the email and try again',
+                );
+              } on GenericAuthException {
+                await showErrorDialog(
+                  context,
+                  'Failed to register',
+                  
+                );
+              }
+            },
+            child: const Text('Register'),
+          ),
           TextButton(
             onPressed: () {
               Navigator.of(context).pushNamedAndRemoveUntil(
