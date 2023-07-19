@@ -10,9 +10,9 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(
     MaterialApp(
-      title: 'Facebook',
+      title: 'Flutter',
       theme: ThemeData(
-        primarySwatch: Colors.lightBlue,
+        primarySwatch: Colors.blue,
       ),
       home: const HomePage(),
       routes: {
