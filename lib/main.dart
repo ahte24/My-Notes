@@ -7,11 +7,12 @@ import 'package:flutter_application_2/views/register_view.dart';
 import 'package:flutter_application_2/views/verify_email_view.dart';
 
 void main() {
+  
   WidgetsFlutterBinding.ensureInitialized();
   runApp(
     MaterialApp(
       title: 'Flutter',
-      theme: ThemeData(
+            theme:ThemeData(
         primarySwatch: Colors.blue,
       ),
       home: const HomePage(),
