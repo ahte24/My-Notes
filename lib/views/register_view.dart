@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_2/constante/routes.dart';
 import 'package:flutter_application_2/services/auth/auth_exceptions.dart';
 import 'package:flutter_application_2/services/auth/auth_service.dart';
-import 'package:flutter_application_2/utilities/show_error_dialog.dart';
+import 'package:flutter_application_2/utilities/dialogs/error_dialog.dart';
 
 class Registerview extends StatefulWidget {
   const Registerview({Key? key}) : super(key: key);
@@ -81,7 +81,6 @@ class _RegisterviewState extends State<Registerview> {
                 await showErrorDialog(
                   context,
                   'Failed to register',
-                  
                 );
               }
             },
